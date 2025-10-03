@@ -64,7 +64,8 @@ namespace projeto_final_backend.Infrastructure.Repositories
         }
         public Usuario ObterPorEmail(string email)
         {
-            return _context.Usuario.FirstOrDefault(u => u.Email == email);
+            var emailNormalizado = email.Trim().ToLower();
+            return _context.Usuario.FirstOrDefault(u => u.Email.ToLower() == emailNormalizado);
         }
 
     }
