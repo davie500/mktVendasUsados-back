@@ -47,7 +47,7 @@ namespace projeto_final_backend.Application.Services
             _repo.Salvar();
         }
 
-        public async Task RegisterAsync(string email, string senha)
+        public async Task RegisterAsync(string usuario, string email, string senha,  string telefone)
         {
             email = email.Trim().ToLowerInvariant();
 
@@ -59,8 +59,10 @@ namespace projeto_final_backend.Application.Services
 
             var novoUsuario = new Usuario
             {
+                Nome = usuario,
                 Email = email,
-                Senha_Hash = senhaHash
+                Senha_Hash = senhaHash,
+                Telefone = telefone
             };
 
             _repo.Add(novoUsuario);

@@ -4,8 +4,8 @@
     {
         public int Id { get; set; }
         public string? Nome { get; set; }
-        public string Email { get; set; } = default!;
-        public string? Senha_Hash { get; set; } = default!;
+        public string Email { get; set; }
+        public string Senha_Hash { get; set; }
         public string? Telefone { get; set; }
         public bool Admin { get; set; }
         public int Ativo { get; set; }

@@ -62,10 +62,12 @@ namespace projeto_final_backend.Infrastructure.Repositories
             _context.Usuario.AddAsync(usuario);
             return _context.SaveChangesAsync();
         }
-        public Usuario ObterPorEmail(string email)
+        public Usuario? ObterPorEmail(string email)
         {
             var emailNormalizado = email.Trim().ToLower();
-            return _context.Usuario.FirstOrDefault(u => u.Email.ToLower() == emailNormalizado);
+            return _context.Usuario
+                .Where(u => u.Email != null)
+                .FirstOrDefault(u => u.Email.ToLower() == emailNormalizado);
         }
 
     }

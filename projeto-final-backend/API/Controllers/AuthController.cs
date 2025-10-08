@@ -11,14 +11,14 @@ namespace tech_store_api.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterDto dto)
         {
-            await auth.RegisterAsync(dto.Email, dto.Password);
+            await auth.RegisterAsync(dto.Nome, dto.Email, dto.Senha, dto.Telefone);
             return Created("", new { dto.Email });
         }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto dto)
         {
-            var token = await auth.LoginAsync(dto.Email, dto.Password);
+            var token = await auth.LoginAsync(dto.Email, dto.Senha);
             return Ok(new AuthResponse(token));
         }
     }
