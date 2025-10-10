@@ -15,6 +15,13 @@ namespace tech_store_api.API.Controllers
             return Created("", new { dto.Email });
         }
 
+        [HttpGet("check-email")]
+        public IActionResult CheckEmail([FromQuery] string email)
+        {
+            var emailDisponivel = auth.TemEmailDisponivel(email);
+            return Ok(new { EmailDisponivel = emailDisponivel });
+        }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto dto)
         {

@@ -11,5 +11,6 @@
         public int Ativo { get; set; }
         public DateTime CriadoEm { get; set; }
         public DateTime AtualizadoEm { get; set; }
+        public string Nome_Loja { get; set; }
     }
 }

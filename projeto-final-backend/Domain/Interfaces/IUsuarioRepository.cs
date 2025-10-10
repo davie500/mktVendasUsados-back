@@ -18,5 +18,6 @@ namespace projeto_final_backend.Domain.Interfaces
         Task<Usuario?> GetByEmailAsync(string email);
         Task AddAsync(Usuario usuario);
         Usuario ObterPorEmail(string email);
+        Task<Usuario?> TemEmailDisponivel(string email);
     }
 }

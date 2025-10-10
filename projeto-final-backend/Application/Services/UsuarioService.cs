@@ -69,6 +69,13 @@ namespace projeto_final_backend.Application.Services
             _repo.Salvar();
         }
 
+        public bool TemEmailDisponivel(string email)
+        {
+            email = email.Trim().ToLowerInvariant();
+            var usuario = _repo.ObterPorEmail(email);
+            return usuario == null;
+        }
+
         public async Task<string> LoginAsync(string email, string senha)
         {
             email = email.Trim().ToLowerInvariant();

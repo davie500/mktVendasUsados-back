@@ -70,5 +70,9 @@ namespace projeto_final_backend.Infrastructure.Repositories
                 .FirstOrDefault(u => u.Email.ToLower() == emailNormalizado);
         }
 
+        public Task<Usuario?> TemEmailDisponivel(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
