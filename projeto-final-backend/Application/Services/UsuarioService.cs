@@ -65,7 +65,7 @@ namespace projeto_final_backend.Application.Services
                 Telefone = telefone
             };
 
-            _repo.Add(novoUsuario);
+            await _repo.AddAsync(novoUsuario);
             _repo.Salvar();
         }
 

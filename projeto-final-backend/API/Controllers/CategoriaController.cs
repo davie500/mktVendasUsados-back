@@ -26,9 +26,9 @@ namespace projeto_final_backend.API.Controllers
         {
             if (categoria == null)
                 return BadRequest("Categoria inválido.");
-            var novoCategoria = _service.CriarCategoria(categoria);
+            var novaCategoria = _service.CriarCategoria(categoria);
 
-            return CreatedAtAction(nameof(Get), new { id = novoCategoria.Id }, novoCategoria);
+            return CreatedAtAction(nameof(Get), new { id = novaCategoria.Id }, novaCategoria);
         }
 
         [HttpPut("{id}")]
